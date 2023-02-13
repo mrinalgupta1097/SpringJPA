@@ -57,4 +57,20 @@ class StudentRepositoryTest {
         System.out.println(studentList.get(0).getGuardian());
     }
 
+    // fetch student by email using @Query
+    @Test
+    public void printStudentByEmailAddress(){
+        Student student =
+                studentRepository.getStudentByEmailAddress("mrinalgupta1097@gmail.com");
+        System.out.println(student);
+    }
+
+    // fetch selective data from query
+    @Test
+    public void printStudentFirstNameByEmailAddress(){
+        String firstName =
+                studentRepository.getStudentFirstNameByEmailAddress("mrinalgupta1097@gmail.com");
+        System.out.println(firstName);
+    }
+
 }
