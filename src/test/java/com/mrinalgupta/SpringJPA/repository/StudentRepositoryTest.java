@@ -8,8 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
 class StudentRepositoryTest {
     @Autowired
@@ -74,9 +72,14 @@ class StudentRepositoryTest {
     }
 
     @Test
-    public void printStudentByEmailAdressNative(){
+    public void printStudentByEmailAddressNative(){
         Student student = studentRepository.getStudentByEmailAddressNative("mrinalgupta1097@gmail.com");
         System.out.println(student);
     }
 
+    @Test
+    void getStudentByEmailAddressNativeNamedParam() {
+        Student student = studentRepository.getStudentByEmailAddressNativeNamedParam("mrinalgupta1097@gmail.com");
+        System.out.println(student);
+    }
 }
